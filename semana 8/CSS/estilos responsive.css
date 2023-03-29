@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    max-width: 100%;
+}
+body{
+    font-family: Tahoma;
+    font-size: 18px;
+    background-image: url(../img/sede\ chapimnero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* seccion maquetacion CSS para header */
+#header{
+    grid-area: header; /* se asigna nombre al header para display grid */ 
+    background-color: lightsteelblue;
+    border: 2px solid blue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+ul{
+    padding: 0 0;
+    margin: 0 1px;
+}
+li{
+    display: inline;
+    list-style: none;
+    margin: 0 5px;
+    font: bold 12px verdana;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+/* SECCION ESTILOS BARRA NAV */
+#menu{
+    grid-area: nav; /* NOMBRE ASIGNADO A HEADER EN DISPLAY GRID */
+    background-color: blue;
+    border: 2px solid green;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+.buscarbox input{
+    height: 25px;
+    width: 0;
+    padding: 0;
+    border-radius:40px;
+    border:0px;
+    padding-right: 50px;
+    transition: .8s ease;    
+}
+.buscarbox input:hover{
+    width: 150px;
+    padding-left: 10px;
+    outline: none;
+}
+#main{
+    grid-area: main; /* NOMBRE ASIGNADO A HEADER EN DISPLAY GRID */
+    background-color: rgba(152, 205, 251, 0.827);
+    backdrop-filter: blur(5px);
+    border: 2px solid green;
+    max-width: 100%;
+    height: auto;
+}
+figure{
+    display: inline;
+    margin: 45px;
+    padding: 5px;
+}
+/* SECCION ESTILOS ARTICLE PROGRAMAS INCAP */
+.programa{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 45%;
+    height: 200px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: aliceblue;
+    backdrop-filter: blur(5px);
+}
+#sidebar{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(100, 195, 247, 0.553);
+    backdrop-filter: blur(5px);
+}
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+/* estilos de pie de pajina */
+#footer{
+    grid-area: footer;
+    padding-top: 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    clear: both;
+    background-color:rgba(100, 195, 247, 0.553);
+    backdrop-filter: blur(5px);
+}
+/* estilosd redes sociales */
+#redes a{
+    padding: 5px;
+    margin: 0;
+}
+#redes a i:hover{
+    transform: scalex(1.5);
+}
+/* estilos iconos fontawesome */
+i[class^="fa"]{
+    color: gray;
+    font-size: 18px;
+}
+i[class^="fab"]{
+    color: gray;
+    font-size: 20px;
+    border: 1px solid transparent;
+    margin: 0;}
+.openmenu{
+    display:none;
+    cursor: pointer;
+    color: black;
+    font-size: 12px;
+}
+/* seccion de estilos web respopnsive al contenedor con display grid */
+#grid-container >*{
+    text-align: center;
+    box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+/* definir estilos al display grid vista 3 columnas */
+#grid-container {
+    display: grid;
+    grid-gap: 10px;   
+    grid-template:
+    "header header header" 150px
+    "nav nav nav" 50px
+    "main main sidebar" 300px
+    "main main sidebar" 300px
+    "main main sidebar" 300px
+    "footer footer footer" 150px /
+    1000px 150px 300px;
+}
+@media(max-width:1024px){
+    #grid-container
+    grid-template:
+    "header header"
+    "nav main"
+    "nav main"
+    "sidebar sidebar"
+    "footer footer" 100px / 
+    250px 450px;
+}
+#menu{
+    background-color: blue;
+    border-radius: 22px;
+    display: block;
+    padding: 45px;
+    margin:40px;
+    height: auto;
+    text-align: center;
+}
+#main{
+display: flex;
+flex-direction: column;/* cambia la forma de dirección de fila a col*/
+justify-content: space-between;
+align-items:center;
+flex-wrap: wrap;/*se define el auto ajuste de ancho dispostivo pasa a sgte. linea*/
+max-width:100%;
+}
+.programa{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items:center;
+flex-wrap: wrap;
+max-width: 100%;
+height: auto;
+border: 1px solid black; 
+
+}
+iframe{
+max-width: 100%;
+height: auto;
+}
+.buscarbox{
+display:block;
+padding: 5px;
+}
